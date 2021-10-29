@@ -4,123 +4,63 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fundamentos - Flex flow</title>
+  <title>Fundamentos - justify-content</title>
   <!-- 
     É a propriedade que define se os itens evem ou não quebrar a linha.
     Permite a quebra de linha assim que um dos flex itens não puder mais ser compactado
   -->
   <style>
 
-    .flex-container {
+    .container {
+      max-width: 400px;
+      border: 1px solid #000;
+      margin: 0;
       display: flex;
-      flex-flow: row nowrap;
-      border: 1px solid black;
-      max-width: 500px;
-      margin-bottom: 10px;
-      max-height: 200px;
-    }
-
-    .default {
-      flex-flow: row nowrap;
-    }
-
-    .wrap {
-      flex-flow: row wrap;
-    }
-
-    .wrap-reverse {
-      flex-flow: row wrap-reverse;
-    }
-
-    .r-nowrap {
-      flex-flow: row-reverse nowrap;
-    }
-
-    .r-wrap {
-      flex-flow: row-reverse wrap;
-    }
-
-    .rr-wrap {
-      flex-flow: column wrap-reverse;
     }
 
     .item {
       background-color: blueviolet;
       margin: 5px;
-      color: white;
       text-align: center;
-      width: 100px;
-      height: 50px;
-      line-height: 50px;
+      color: #FFF;
+    }
+
+    .flex-start {
+      justify-content: flex-start;
+    }
+
+    .flex-end {
+      justify-content: flex-end;
+    }
+
+    .center {
+      justify-content: center;
     }
 
   </style>
 </head>
 <body>
 
-  <h1>default: row nowrap</h1>
-  <div class="flex-container default">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    <div class="item">4</div>
-    <div class="item">5</div>
-    <div class="item">6</div>
-  </div>
+  <h1>flex-start</h1>
+  <section class="container flex-start">
+    <div class="item">1 item</div>
+    <div class="item">2 item</div>
+    <div class="item">3 item</div>
+  </section>
 
-  <h1>wrap</h1>
-  <div class="flex-container wrap">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    <div class="item">4</div>
-    <div class="item">5</div>
-    <div class="item">6</div>
-  </div>
+  <h1>flex-end</h1>
+  <section class="container flex-end">
+    <div class="item">1 item</div>
+    <div class="item">2 item</div>
+    <div class="item">3 item</div>
+  </section>
 
-  <h1>wrap-reverse</h1>
-  <div class="flex-container wrap-reverse">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    <div class="item">4</div>
-    <div class="item">5</div>
-    <div class="item">6</div>
-  </div>
-
-  <h1>row-reverse nowrap</h1>
-  <div class="flex-container r-nowrap">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    <div class="item">4</div>
-    <div class="item">5</div>
-    <div class="item">6</div>
-    <div class="item">7</div>
-    <div class="item">8</div>
-  </div>
-  
-  <h1>row-reverse wrap</h1>
-  <div class="flex-container r-wrap">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    <div class="item">4</div>
-    <div class="item">5</div>
-    <div class="item">6</div>
-    <div class="item">7</div>
-  </div>
-
-  <h1>row-reverse wrap-reverse</h1>
-  <div class="flex-container rr-wrap">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    <div class="item">4</div>
-    <div class="item">5</div>
-    <div class="item">6</div>
-    <div class="item">7</div>
-  </div>
+  <h1>flex-center</h1>
+  <section class="container center">
+    <div class="item">1 item</div>
+    <div class="item">2 item</div>
+    <div class="item">3 item</div>
+  </section>
 
 </body>
 </html>
