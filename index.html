@@ -4,76 +4,87 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fundamentos - flex basis</title>
+  <title>Fundamentos -  flex-shrink</title>
   <!-- 
     É a propriedade que define se os itens evem ou não quebrar a linha.
     Permite a quebra de linha assim que um dos flex itens não puder mais ser compactado
   -->
   <style>
 
-    .flex-container {
-      max-width: 500px;
-      border: 2px solid #000;
-      display: flex;
-    }
+     .flex-container {
+       display: flex;
+       border: 2px solid #000;
+       max-width: 350px;
+       margin-bottom: 10px;
+     }
 
-    .items {
-       background-color: coral;
-       color: #FFF;
-       text-align: center;
+     .item {
        margin: 5px;
-    }
+       background-color: orangered;
+       font-size: 25px;
+       text-align: center;
+     }
 
-    .bauto {
-      flex-basis: auto;
-    }
+     .s-0 {
+       flex-shrink: 0;
+       flex-basis: 100px;
+     }
 
-    .fg-0 {
-      flex-grow: 0;
-    }
+     .s-1 {
+       flex-shrink: 1;
+     }
 
-    .fg-1 {
-      flex-grow: 1;
-    }
+     .s-2 {
+       flex-shrink: 2;
+       flex-basis: 100px;
+     }
 
-    .fg-2 {
-      flex-grow: 2;
-    }
+     .s-3 {
+       flex-shrink: 3;
+       flex-basis: 100px;
+     }
 
-    .b-0 {
-      flex-basis: 0;
-    }
+     .fg-1 {
+       flex-grow: 1;
+     }
 
-    .w100 {
-      flex-basis: 100px;
-    }
+
 
   </style>
 </head>
 <body>
 
-  <p>auto</p>
+  <p>flex-shrink: 1</p>
   <div class="flex-container">
-    <div class="items bauto fg-1">A</div>
-    <div class="items bauto fg-1">BBB</div>
-    <div class="items bauto fg-1">C</div>
-    <div class="items bauto fg-2">DEF</div>
+    <div class="item s-1 fg-1">A</div>
+    <div class="item s-1 fg-1">B</div>
+    <div class="item s-1 fg-1">C</div>
+    <div class="item s-1 fg-1">D</div>
+    <div class="item s-1 fg-1">E</div>
   </div>
 
-  <p>0 (zero)</p>
   <div class="flex-container">
-    <div class="items b-0 fg-1">AAAAA</div>
-    <div class="items b-0 fg-1">BBB</div>
-    <div class="items b-0 fg-1">C</div>
-    <div class="items b-0 fg-1">DEF</div>
+    <div class="item s-1 fg-1">A</div>
+    <div class="item s-1 fg-1">Loren Ipsum Loren Ipsum</div>
+    <div class="item s-1 fg-1">C</div>
+    <div class="item s-1 fg-1">D</div>
   </div>
 
-  <p>basis + width</p>
+  <p>flex-shrink: 0 / basis: 100px</p>
   <div class="flex-container">
-    <div class="items w100 fg-1">AA</div>
-    <div class="items w100 fg-1">BBB</div>
-    <div class="items w100 fg-1">CCC</div>
-    <div class="items w100 fg-1">DEF</div>
+    <div class="item s-0 fg-1">A</div>
+    <div class="item s-0 fg-1">B generated</div>
+    <div class="item s-0 fg-1">C generated</div>
+    <div class="item s-0 fg-1">D generated</div>
+    <div class="item s-0 fg-1">E generated</div>  
+  </div>
+
+  <p>flex-shrink: mix / basis: 100px</p>
+  <div class="flex-container">
+    <div class="item s-1 fg-1">A</div>
+    <div class="item s-2 fg-1">Loren Ipsum</div>
+    <div class="item s-2 fg-1">C</div>
+    <div class="item s-3 fg-1">D</div>
   </div>
 
 </body>
