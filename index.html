@@ -4,135 +4,70 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fundamentos - align content</title>
+  <title>Fundamentos - flex grow</title>
   <!-- 
     É a propriedade que define se os itens evem ou não quebrar a linha.
     Permite a quebra de linha assim que um dos flex itens não puder mais ser compactado
   -->
   <style>
 
-    .container {
-      height: 400px;
-      max-width: 300px;
+    .flex-container {
       display: flex;
-      flex-wrap: wrap;
-      border: 1px solid #000;
+      border: 2px solid #000;
+      max-width: 300px;
+      
     }
 
     .item {
       background-color: orangered;
-      padding: 0 5px;
-      flex: 1;
-      text-align: center;
-      color: #fff;
       margin: 5px;
-      border: 2px solid #000;
+      padding: 10px;
+      text-align: center;
+      color: #FFF;
     }
 
-    .stretch {
-      align-content: stretch;
+    .fg-0 {
+      flex-grow: 0;
     }
 
-    .center {
-      align-content: center;
+    .fg-1 {
+      flex-grow: 1;
     }
 
-    .flex-start {
-      align-content: flex-start;
+    .fg-2 {
+      flex-grow: 2;
     }
 
-    .flex-end {
-      align-content: flex-end;
-    }
-
-    .space-around {
-      align-content: space-around;
-    }
-
-    .space-between {
-      align-content: space-between;
+    .fg-3 {
+      flex-grow: 3;
     }
 
   </style>
 </head>
 <body>
 
-  <p>stretch</p>
-  <div class="container stretch">
-    <div class="item">Lorem Ipsum Lorem Ipsum 1</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 2</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 3</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 4</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 5</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 6</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
+  <p>flex-grow: 0</p>
+  <div class="flex-container">
+    <div class="item fg-0">A</div>
+    <div class="item fg-0">B</div>
+    <div class="item fg-0">C</div>
+    <div class="item fg-0">D</div>
   </div>
 
-  <p>center</p>
-  <div class="container center">
-    <div class="item">Lorem Ipsum Lorem Ipsum 1</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 2</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 3</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 4</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 5</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 6</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
+  <p>flex-grow: 1</p>
+  <div class="flex-container">
+    <div class="item fg-1">A</div>
+    <div class="item fg-1">B</div>
+    <div class="item fg-1">C</div>
+    <div class="item fg-1">D</div>
   </div>
 
-  <p>start</p>
-  <div class="container flex-start">
-    <div class="item">Lorem Ipsum Lorem Ipsum 1</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 2</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 3</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 4</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 5</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 6</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-  </div>
-
-  <p>end</p>
-  <div class="container flex-end">
-    <div class="item">Lorem Ipsum Lorem Ipsum 1</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 2</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 3</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 4</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 5</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 6</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-  </div>
-
-  <p>space-around</p>
-  <div class="container space-around">
-    <div class="item">Lorem Ipsum Lorem Ipsum 1</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 2</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 3</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 4</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 5</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 6</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-  </div>
-
-  <p>space-between</p>
-  <div class="container space-between">
-    <div class="item">Lorem Ipsum Lorem Ipsum 1</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 2</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 3</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 4</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 5</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum 6</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
-    <div class="item">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 7</div>
+  <p>flex-grow: alternados</p>
+  <div class="flex-container">
+    <div class="item fg-1">A</div>
+    <div class="item fg-2">BBBBBBB</div>
+    <div class="item fg-2">C</div>
+    <div class="item fg-3">DDDD</div>
   </div>
 
 </body>
