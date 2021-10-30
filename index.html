@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fundamentos - flex</title>
+  <title>Fundamentos - order</title>
   <!-- 
     É a propriedade que define se os itens evem ou não quebrar a linha.
     Permite a quebra de linha assim que um dos flex itens não puder mais ser compactado
@@ -13,62 +13,81 @@
 
     .flex-container {
       display: flex;
+      max-width: 300px;
       border: 1px solid #000;
-      max-width: 400px;
+      margin-bottom: 20px;
     }
 
     .item {
+      flex: 1;
       background-color: brown;
       color: #FFF;
-      font-size: 24px;
       text-align: center;
+      font-size: 25px;
       margin: 5px;
     }
 
-    .flex-1 {
-      /* grow = 1, shrink = 1, basis = 0 */
-      flex: 1;
+    /* order: altera a ordem dos elementos em tela */
+    .o1 {
+      order: 1;
     }
 
-    .largura {
-      width: 200px;
-      /* min-width: 250px; */
+    .o2 {
+      order: 2;
     }
 
-    .flex-2 {
-      /* grow = 2, shrink = 1, basis = 0 */
-      flex: 2;
+    .o3 {
+      order: 3;
+    }
+
+    .direction {
+      flex-direction: column;
     }
 
   </style>
 </head>
 <body>
 
-  <p>flex: 1</p>
+  <h1>Row</h1>
+  <p>order: 0</p>
   <div class="flex-container">
-    <div class="item flex-1">A</div>
-    <div class="item flex-1">BBB</div>
-    <div class="item flex-1">CC</div>
-    <div class="item flex-1">D</div>
-    <div class="item flex-1">EF</div>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
   </div>
 
-  <p>flex: mix</p>
+  <p>order: diferent</p>
   <div class="flex-container">
-    <div class="item flex-1">A</div>
-    <div class="item flex-2">BBB</div>
-    <div class="item flex-2">CC</div>
-    <div class="item flex-1">D</div>
-    <div class="item flex-1">EF</div>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item o3">4</div>
+    <div class="item o2">5</div>
+    <div class="item o1">6</div>
   </div>
 
-  <p>width ignored -> basic = 0</p>
-  <div class="flex-container">
-    <div class="item largura">A</div>
-    <div class="item largura">BBB</div>
-    <div class="item largura">CC</div>
-    <div class="item largura">D</div>
-    <div class="item largura">EF</div>
+  <h1>Column</h1>
+  <p>order: 0</p>
+  <div class="flex-container direction">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+
+  <p>order: diferent</p>
+  <div class="flex-container direction">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item o3">4</div>
+    <div class="item o2">5</div>
+    <div class="item o1">6</div>
   </div>
 
 </body>
